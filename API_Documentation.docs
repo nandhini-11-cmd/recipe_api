@@ -1,0 +1,178 @@
+                    API documentation for postman collection
+
+•	POST / recipe: Create a new recipe
+Purpose: Add a new recipe to the database
+Request:
+Method: POST
+URL: http://localhost:3000/recipe
+Body: Raw-json
+Sample data:
+         {
+           "title": "Veg Fried Rice",
+           "ingrediants": ["Rice", "Carrot", "Beans", "Soy Sauce"],
+           "instructions": "Boil rice. Stir fry veggies. Mix everything.",
+           "cookTime": 20
+         }
+Success Response:
+         {
+           "message": "Recipe added"
+          }
+
+•	GET/recipe – Get all the recipes
+Purpose: Retrieve all the recipes
+Request: 
+Method: GET
+URL: http://localhost:3000/recipe/
+Response:
+        [
+          {
+             "_id": "685fe1736be4f4f0ced389a7",
+             "title": "Paneer Butter Masala",
+             "ingrediants": [
+               "Paneer",
+               "Butter",
+              "Tomato",
+              "Cream",
+              "Spices"
+              ],
+              "instructions": "Cook tomatoes, blend, add cream and paneer.",
+              "cookTime": 25,
+              "createdAt": "2025-06-28T12:34:59.490Z",
+              "__v": 0
+              },
+              {
+                "_id": "6860006c63d8bb7759ee381a",
+                "title": "Tomato Soup",
+                "ingrediants": [
+                "Tomatoes",
+                 "Water",
+                 "Salt",
+                 "Pepper"
+                 ],
+               "instructions": "Boil tomatoes, blend, add salt and pepper.",
+               "cookTime": 15,
+                "createdAt": "2025-06-28T14:47:08.026Z",
+                "__v": 0
+              },
+              {
+                 "_id": "686087b485d0713165fcc7c8",
+                 "title": "Veg Fried Rice",
+                 "ingrediants": [
+                 "Rice",
+                 "Carrot",
+                 "Beans",
+                 "Soy Sauce"
+                  ],
+             "instructions": "Boil rice. Stir fry veggies. Mix everything.",
+             "cookTime": 20,
+             "createdAt": "2025-06-29T00:24:20.013Z",
+             "__v": 0
+              }
+               ]
+•	Get/recipe/:id – Get recipe by id
+Purpose: Retrieve a specific recipe by id
+Request: 
+Method: GET
+URL: http://localhost:3000/recipe/685fe1736be4f4f0ced389a7
+Response:
+           {
+                   "_id": "685fe1736be4f4f0ced389a7",
+                 "title": "Paneer Butter Masala",
+                 "ingrediants": [
+                 "Paneer",
+                  "Butter",
+                  "Tomato",
+                  "Cream",
+                  "Spices"
+                ],
+             "instructions": "Cook tomatoes, blend, add cream and     paneer.",
+                 "cookTime": 25,
+                "createdAt": "2025-06-28T12:34:59.490Z",
+                 "__v": 0
+               }
+
+•	PUT/recipe/:id – Update recipe by id
+Purpose: Update one or more fields of the recipe
+Request:
+Method: PUT
+URL: http://localhost:3000/recipe/685fe1736be4f4f0ced389a7
+Body: raw-json
+Sample:
+Before update:
+               {
+                   "_id": "685fe1736be4f4f0ced389a7",
+                  "title": "Paneer Butter Masala",
+                   "ingrediants": [
+                    "Paneer",
+                    "Butter",
+                    "Tomato",
+                    "Cream",
+                    "Spices"
+                   ],
+               "instructions": "Cook tomatoes, blend, add cream and paneer.",
+               "cookTime": 25,
+               "createdAt": "2025-06-28T12:34:59.490Z",
+               "__v": 0
+              },
+
+Update value:
+           {
+              "cookTime": 30
+            }     
+
+              After Updation:
+                  {
+                  "message": "Recipe updated",
+                   "data": {
+                   "_id": "685fe1736be4f4f0ced389a7",
+                   "title": "Paneer Butter Masala",
+                   "ingrediants": [
+                    "Paneer",
+                    "Butter",
+                    "Tomato",
+                    "Cream",
+                    "Spices"
+                    ],
+                "instructions": "Cook tomatoes, blend, add cream and paneer.",
+                  "cookTime": 30,
+                   "createdAt": "2025-06-28T12:34:59.490Z",
+                     "__v": 0
+                 }
+               }
+
+•	Delete/recipe/:id – Delete recipe by id
+Purpose: Remove a recipe by its id
+Request:
+Method: DELETE
+URL: http://localhost:3000/recipe/685fe1736be4f4f0ced389a7
+Response: 
+            {
+               "message": "Recipe deleted",
+               "deleted": {
+               "_id": "685fe1736be4f4f0ced389a7",
+               "title": "Paneer Butter Masala",
+               "ingrediants": [
+                    "Paneer",
+                    "Butter",
+                    "Tomato",
+                    "Cream",
+                    "Spices"
+                ],
+               "instructions": "Cook tomatoes, blend, add cream and paneer.",
+               "cookTime": 30,
+               "createdAt": "2025-06-28T12:34:59.490Z",
+               "__v": 0
+               }
+              }
+
+
+
+
+
+
+
+
+
+
+
+
