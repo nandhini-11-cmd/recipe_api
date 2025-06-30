@@ -7,7 +7,7 @@ const recipeRoutes = require('./routes/recipeRoutes');
 app.use(cors({ origin: '*' }));
 app.use(express.json());
 
-app.use('/recipe', recipeRoutes);
+app.use('/', recipeRoutes);
 
 const PORT = 3000;
 app.listen(PORT, () => {
